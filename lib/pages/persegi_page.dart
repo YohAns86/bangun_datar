@@ -12,6 +12,7 @@ class PersegiPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.green,
         title: Text("Persegi Page"),
       ),
       body: Column(
@@ -80,10 +81,16 @@ class PersegiPage extends StatelessWidget {
               ],
             ),
           ),
-          Obx(() => Text(_persegiController.hasil.value, style: TextStyle (color: Colors.green))),
-
-
-
+          Obx(
+                () => Text(
+              _persegiController.hasil.value,
+              style: TextStyle(
+                color: _persegiController.isHitungLuas.value
+                    ? Colors.green
+                    : Colors.yellow,
+              ),
+            ),
+          ),
         ],
       ),
     );

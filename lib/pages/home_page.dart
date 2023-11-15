@@ -1,4 +1,8 @@
+import 'package:bangun_datar_app/controller/segitiga_controller.dart';
+import 'package:bangun_datar_app/pages/lingkaran_page.dart';
 import 'package:bangun_datar_app/pages/persegi_page.dart';
+import 'package:bangun_datar_app/pages/persegipanjang_page.dart';
+import 'package:bangun_datar_app/pages/segitiga_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,22 +28,27 @@ class HomePage extends StatelessWidget {
               },
               child: CustomMenu(
                   imageAssets: "assets/img_4.png", title: "Persegi")),
-          Row(
-            children: [
-              Expanded(
-                  child: CustomMenu(
-                      imageAssets: "assets/img_2.png",
-                      title: "Segitiga samakaki")),
-              Expanded(
-                  child: CustomMenu(
-                      imageAssets: "assets/img_2.png",
-                      title: "Segitiga samakaki")),
-              Expanded(
-                  child: CustomMenu(
-                      imageAssets: "assets/img_2.png",
-                      title: "Segitiga samakaki")),
-            ],
-          ),
+          InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PanjangPage()));
+              },
+              child: CustomMenu(
+                  imageAssets: "assets/img_1.png", title: "Persegi Panjang")),
+          InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SegitigaPage()));
+              },
+              child: CustomMenu(
+                  imageAssets: "assets/img_2.png", title: "Persegi Panjang")),
+          InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LingkaranPage()));
+              },
+              child: CustomMenu(
+                  imageAssets: "assets/download.jpg", title: "Lingkaran")),
         ],
       ),
     );
